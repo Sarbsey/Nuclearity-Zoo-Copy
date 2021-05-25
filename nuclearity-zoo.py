@@ -102,7 +102,7 @@ app.layout = html.Div(children=[
     style={"width": "50%"}
     ),
     
-    dcc.Markdown(children=markdown_text4),
+    dcc.Markdown(children=markdown_text10),
 
     dcc.Markdown(children='#### Select shape:'),
 
