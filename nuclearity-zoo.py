@@ -102,20 +102,7 @@ app.layout = html.Div(children=[
     style={"width": "50%"}
     ),
     
-    dcc.Markdown(children=markdown_text4),
-    
-    # Range slider with input boxes so the user can choose range of formation energy
-    dcc.RangeSlider(
-    min=0,
-    max=100,
-    step=None,
-    marks={
-        0: '-100 eV',
-        10: '0 eV',
-        100: '100 eV'
-    },
-    value=[3, 7.65]
-)  
+
     dcc.Markdown(children='#### Select shape:'),
 
     dcc.Checklist(
