@@ -45,7 +45,7 @@ markdown_text3 = '''
 #### Select nuclearity:
 '''
 
-markdown_text4 = '''
+markdown_text10 = '''
 #### Select desired formation energy:
 '''
 
@@ -102,6 +102,7 @@ app.layout = html.Div(children=[
     style={"width": "50%"}
     ),
     
+    dcc.Markdown(children=markdown_text4),
 
     dcc.Markdown(children='#### Select shape:'),
 
