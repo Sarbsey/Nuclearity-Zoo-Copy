@@ -44,6 +44,12 @@ markdown_text2 = '''
 markdown_text3 = '''
 #### Select nuclearity:
 '''
+
+markdown_text4 = '''
+#### Select desired formation energy:
+'''
+
+
 actives = {'Pd', 'Pt', 'Rh', 'Ru', 'Ag', 'Ir'}
 hosts = {'Zn', 'Al', 'Ga', 'In', 'Cd'}
 unique_shapes = sorted(data1['graph_id'].unique())
@@ -95,6 +101,21 @@ app.layout = html.Div(children=[
         id = 'nuclearity',
     style={"width": "50%"}
     ),
+    
+    dcc.Markdown(children=markdown_text4),
+    
+    # Double slider with input boxes so the user can choose range of formation energy
+    dcc.RangeSlider(
+    min=-100,
+    max=100,
+    step=None,
+    marks={
+        -100: '-100 eV',
+        0: '0 eV',
+        100: '100 eV'
+    },
+    value=[3, 7.65]
+)  
     
     dcc.Markdown(children='#### Select shape:'),
     
