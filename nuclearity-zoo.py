@@ -106,12 +106,12 @@ app.layout = html.Div(children=[
     
     # Range slider with input boxes so the user can choose range of formation energy
     dcc.RangeSlider(
-    min=-100,
+    min=0,
     max=100,
     step=None,
     marks={
-        -100: '-100 eV',
-        0: '0 eV',
+        0: '-100 eV',
+        10: '0 eV',
         100: '100 eV'
     },
     value=[3, 7.65]
@@ -128,12 +128,7 @@ app.layout = html.Div(children=[
     html.Div(id = 'results found'),
     html.Div(id='table output')
 ])   
-    
-    
-    html.Div(id = 'results found'),
-    html.Div(id='table output')
 
-])
 
 # Other functions
 
