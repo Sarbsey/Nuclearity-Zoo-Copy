@@ -116,7 +116,18 @@ app.layout = html.Div(children=[
     },
     value=[3, 7.65]
 )  
+    dcc.Markdown(children='#### Select shape:'),
+
+    dcc.Checklist(
+        id = 'shape',
+        options=[{'label': i, 'value': i} for i in unique_shapes],
+        value=unique_shapes,
+        labelStyle={'display': 'inline-block'}
+    ),
     
+    html.Div(id = 'results found'),
+    html.Div(id='table output')
+])   
     
     
     html.Div(id = 'results found'),
