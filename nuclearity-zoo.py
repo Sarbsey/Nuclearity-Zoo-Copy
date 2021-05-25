@@ -104,7 +104,7 @@ app.layout = html.Div(children=[
     
     dcc.Markdown(children=markdown_text4),
     
-    # Double slider with input boxes so the user can choose range of formation energy
+    # Range slider with input boxes so the user can choose range of formation energy
     dcc.RangeSlider(
     min=-100,
     max=100,
@@ -117,14 +117,7 @@ app.layout = html.Div(children=[
     value=[3, 7.65]
 )  
     
-    dcc.Markdown(children='#### Select shape:'),
     
-    dcc.Checklist(
-        id = 'shape',
-        options=[{'label': i, 'value': i} for i in unique_shapes],
-        value=unique_shapes,
-        labelStyle={'display': 'inline-block'}
-    ),
     
     html.Div(id = 'results found'),
     html.Div(id='table output')
