@@ -109,17 +109,7 @@ range will be filtered out.
 '''
 
 # Create the plotly dash layout
-app.layout = html.Div(children=[
-    html.H1(children='Nuclearity Zoo'),
 
-    # Dropdown bar so the user may select which scaling pair to view
-    dcc.Dropdown(
-        options=[
-            *ads_pairs_dropdown
-        ],
-        value=f'{ads_pairs[0]}',
-        id = 'Adsorbates'
-    ),
 
 
     # Output text for the linear Regression
