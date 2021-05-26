@@ -102,12 +102,12 @@ app.layout = html.Div(children=[
     style={"width": "50%"}
     ),
     
-    dcc.Markdown(children='#### Testing!'),
-        # Range slider with input boxes so the user can choose range of formation energy
     
-
+    dcc.Markdown(children='#### Testing!'),
+    
+    # Range slider with input boxes so the user can choose range of formation energy
     dcc.RangeSlider(
-        id='my-range-slider',
+        id='FE',
         min=0,
         max=20,
         step=0.5,
@@ -125,7 +125,7 @@ app.layout = html.Div(children=[
         labelStyle={'display': 'inline-block'}
     ),
     
-    html.Div(id='output-container-range-slider')
+    html.Div(id='output-container-range-slider'),
     html.Div(id = 'results found'),
     html.Div(id='table output')
 ])   
@@ -137,7 +137,7 @@ app.layout = html.Div(children=[
     Output('shape','options'),
     Input('nuclearity','value'))
     dash.dependencies.Output('output-container-range-slider', 'children'),
-    [dash.dependencies.Input('my-range-slider', 'value')])
+    [dash.dependencies.Input('FE', 'value')])
 
 def update_element(nuclearity):
     groups = data1.groupby('nuclearity')
