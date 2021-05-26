@@ -105,8 +105,7 @@ app.layout = html.Div(children=[
     dcc.Markdown(children='#### Testing!'),
         # Range slider with input boxes so the user can choose range of formation energy
     
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.layout = html.Div([
+
     dcc.RangeSlider(
         id='my-range-slider',
         min=0,
@@ -114,8 +113,7 @@ app.layout = html.Div([
         step=0.5,
         value=[5, 15]
     ),
-    html.Div(id='output-container-range-slider')
-
+    
     
 
     dcc.Markdown(children='#### Select shape:'),
@@ -127,6 +125,7 @@ app.layout = html.Div([
         labelStyle={'display': 'inline-block'}
     ),
     
+    html.Div(id='output-container-range-slider')
     html.Div(id = 'results found'),
     html.Div(id='table output')
 ])   
