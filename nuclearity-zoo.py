@@ -104,8 +104,7 @@ app.layout = html.Div(children=[
     
     dcc.Markdown(children='#### Testing!'),
         # Range slider with input boxes so the user can choose range of formation energy
-    external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
+    
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.layout = html.Div([
     dcc.RangeSlider(
@@ -116,7 +115,7 @@ app.layout = html.Div([
         value=[5, 15]
     ),
     html.Div(id='output-container-range-slider')
-])
+
     
 
     dcc.Markdown(children='#### Select shape:'),
@@ -156,6 +155,7 @@ def update_element(nuclearity):
     Input('num-inactive', 'value'),
     Input('nuclearity', 'value'),
     Input('shape', 'value'))
+    
 
 # Primary callback function
 def update_element(active, inactive, nuclearity,shape):
