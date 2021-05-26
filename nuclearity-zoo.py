@@ -136,6 +136,8 @@ app.layout = html.Div(children=[
 @app.callback(
     Output('shape','options'),
     Input('nuclearity','value'))
+    dash.dependencies.Output('output-container-range-slider', 'children'),
+    [dash.dependencies.Input('my-range-slider', 'value')])
 
 def update_element(nuclearity):
     groups = data1.groupby('nuclearity')
@@ -144,6 +146,8 @@ def update_element(nuclearity):
     shape_list = sorted(temp['graph_id'].unique())
     options = [{'label': i, 'value': i} for i in shape_list]
     return options
+def update_output(value):
+    return 'You have selected "{}"'.format(value)
 
 
 # Create dash callback
