@@ -5,21 +5,23 @@ import dash_core_components as dcc
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.layout = html.Div([
+app.layout = html.Div(children=[
+    html.H1(children='Nuclearity Zoo'),
+    
     dcc.RangeSlider(
-        id='my-range-slider',
+        id='form_energy',
         min=0,
         max=20,
         step=0.5,
         value=[5, 15]
     ),
-    html.Div(id='output-container-range-slider')
+    html.Div(id='fe_selection')
 ])
 
 
 @app.callback(
-    dash.dependencies.Output('output-container-range-slider', 'children'),
-    [dash.dependencies.Input('my-range-slider', 'value')])
+    dash.dependencies.Output('fe_selection', 'children'),
+    [dash.dependencies.Input('form_energy', 'value')])
 def update_output(value):
     return 'You have selected "{}"'.format(value)
 
