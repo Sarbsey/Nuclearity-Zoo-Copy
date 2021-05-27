@@ -5,7 +5,7 @@ import dash_core_components as dcc
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.layout = html.Div(children=[
+app.layout = html.Div([
     html.H1(children='Nuclearity Zoo'),
     
     dcc.RangeSlider(
