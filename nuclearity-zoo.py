@@ -1,32 +1,27 @@
-import pickle
-import numpy as np
-import pandas as pd
-import plotly.express as px
 import dash
-import dash_table
-from dash_table.Format import Format, Group
-import dash_core_components as dcc
 import dash_html_components as html
-import re
+import dash_core_components as dcc
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.layout = html.Div([
-    dcc.RangeSlider(
-        id='my-range-slider',
-        min=0,
-        max=20,
-        step=0.5,
-        value=[5, 15]
+    dcc.Dropdown(
+        id='demo-dropdown',
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': 'Montreal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value='NYC'
     ),
-    html.Div(id='output-container-range-slider')
+    html.Div(id='dd-output-container')
 ])
 
 
 @app.callback(
-    dash.dependencies.Output('output-container-range-slider', 'children'),
-    [dash.dependencies.Input('my-range-slider', 'value')])
+    dash.dependencies.Output('dd-output-container', 'children'),
+    [dash.dependencies.Input('demo-dropdown', 'value')])
 def update_output(value):
     return 'You have selected "{}"'.format(value)
 
