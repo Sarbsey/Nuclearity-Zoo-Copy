@@ -24,7 +24,7 @@ pd.options.plotting.backend = "plotly"
 #data1['shift'] = round(data1['shift'],2)
 
 # Open data
-with open('primary_shape_data1.pkl', 'rb') as f:
+with open('primary_shape_data.pkl', 'rb') as f:
     data1 = pickle.load(f) 
 data1 = pd.DataFrame.from_dict(data1)    
 
@@ -55,7 +55,7 @@ hosts = {'Zn', 'Al', 'Ga', 'In', 'Cd'}
 unique_shapes = sorted(data1['graph_id'].unique())
 
 #encoded_image = base64.b64encode(open('Fig0.png', 'rb').read())
-img = io.imread('shape-detection_backup-main/Fig0.png')
+img = io.imread('Fig0.png')
 fig = px.imshow(img)
 
 # Create the plotly dash layout
